@@ -1,0 +1,71 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fa;
+}
+
+/* Navbar hover */
+.brand-hover {
+  color: #90ee90;
+  font-weight: 800;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.brand-hover:hover {
+  color: #32cd32;
+  font-weight: 900;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: #90ee90;
+  font-weight: 700;
+}
+
+/* Product cards */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Cursor Mini Button */
+#cursorMiniBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #0de23f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  z-index: 1050;
+  user-select: none;
+}
+
+/* Cursor Popup */
+#cursorPopup {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1051;
+  width: 180px;
+  font-size: 14px;
+}

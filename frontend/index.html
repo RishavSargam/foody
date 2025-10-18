@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOODY Store </title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <style>
+    body { position: relative; }
+  </style>
+</head>
+<body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOODY Store</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+<body>
+
+ 
+
+  <!-- ===== Page content here ===== -->
+  <div class="container mt-5">
+    <h3>Welcome to FOODY Store!</h3>
+  </div>
+
+  <!-- CSS for hover effects -->
+  <style>
+    .brand-hover {
+        color: #90ee90;       /* light green */
+        font-weight: 800;      
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .brand-hover:hover {
+        color: #32cd32;       
+        font-weight: 900;      
+    }
+
+    .nav-link {
+        color: #000000;           
+        font-weight: 650;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: #90ee90;        
+        font-weight: 700;
+    }
+  </style>
+<!-- TOPBAR -->
+<div class="topbar bg-light py-1 border-bottom">
+  <div class="container d-flex justify-content-between align-items-center small">
+    <div>
+      <span class="me-3"><i class="bi bi-truck"></i> Free delivery over ₹999</span>
+      <span class="text-muted">Mon — Sat: 9am — 8pm</span>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center">
+        <img src="https://images.unsplash.com/photo-1517244683844-5f5b4d7b6a2f?auto=format&fit=crop&w=40&q=60" alt="mini-logo" class="rounded-circle me-2" style="width:28px;height:28px;object-fit:cover">
+        <strong class="brand-small">FOODY</strong>
+      </div>
+      <select id="langSelect" class="form-select form-select-sm w-auto">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Mini draggable button -->
+<div id="cursorMiniBtn" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--brand, #0de23f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: grab;
+    z-index: 1050;
+">
+  🖱
+</div>
+
+<!-- Cursor Popup (hidden by default) -->
+<div id="cursorPopup" style="
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1051;
+    width: 180px;
+    font-size: 14px;
+">
+  <label for="cursorSelect" class="form-label mb-1">Choose Cursor:</label>
+  <select id="cursorSelect" class="form-select form-select-sm mb-2">
+    <option value="default">Default 🖱</option>
+    <option value="spoon">🥄 Spoon</option>
+    <option value="knife">🔪 Knife</option>
+    <option value="plate">🍽 Plate</option>
+    <option value="screw">🪛 Screw</option>
+  </select>
+  <hr class="my-1">
+  <button id="chatBtn" class="btn btn-sm btn-primary w-100 mb-1">💬 Chat with us</button>
+  <button id="helpBtn" class="btn btn-sm btn-secondary w-100">❓ Help</button>
+</div>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+  <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=80&q=60" 
+       alt="logo" 
+       class="rounded-circle me-2" 
+       style="width:48px; height:48px; object-fit:cover;">
+  <span class="brand" style="color: #16c216; font-weight: 800; font-size: 1.5rem;">
+    FOODY
+  </span>
+</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="trackOrderBtn"><i class="bi bi-box-seam"></i> Track Order</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> My Account
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+            <li><a class="dropdown-item" href="#" id="loginBtn">Sign in</a></li>
+            <li><a class="dropdown-item" href="#">Orders</a></li>
+            <li><a class="dropdown-item" href="#">Wishlist</a></li>
+          </ul>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="btn btn-success d-flex align-items-center gap-2" href="#" id="cartBtn">
+            <i class="bi bi-cart3"></i> Cart <span class="badge bg-white text-success ms-1 rounded-pill" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero position-relative text-center text-white">
+  <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80" 
+       class="w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: -1;" alt="Food Background">
+  
+  <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 500px;">
+    <h1 class="display-4 fw-bold">Fresh Food. Faster Delivery.</h1>
+    <p class="lead mb-4">Locally sourced produce & groceries delivered to your door in hours.</p>
+    <a href="#products" class="btn btn-success btn-lg me-2">Order Now</a>
+    <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+    <!-- <img src="https://images.unsplash.com/photo-1612874745511-2763e6a5e3cb?auto=format&fit=crop&w=400&q=60" 
+         class="mt-4 img-fluid rounded shadow" style="max-height: 250px;" alt="Food Dish"> -->
+  </div>
+</section>
+
+
+<!-- CATEGORIES -->
+<section id="categories" class="py-5 bg-white">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="mb-0">Featured Categories</h3>
+      <small class="text-muted">Browse by type</small>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="category-card p-3 text-center shadow-sm">
+          <img src="https://images.unsplash.com/photo-1547516508-4f02f3f8a1b6?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-2" alt="fruits">
+          <h6 class="mb-0">Fresh Fruits</h6>
+          <small class="text-muted">3 Products</small>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="category-card p-3 text-center shadow-sm">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-2" alt="vegan">
+          <h6 class="mb-0">Vegan</h6>
+          <small class="text-muted">4 Products</small>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="category-card p-3 text-center shadow-sm">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-2" alt="crackers">
+          <h6 class="mb-0">Crackers</h6>
+          <small class="text-muted">1 Product</small>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="category-card p-3 text-center shadow-sm">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-2" alt="sauce">
+          <h6 class="mb-0">Sauce</h6>
+          <small class="text-muted">2 Products</small>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+        <div class="category-card p-3 text-center shadow-sm">
+          <img src="https://images.unsplash.com/photo-1543353071-087092ec393f?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-2" alt="pancake">
+          <h6 class="mb-0">Pancake</h6>
+          <small class="text-muted">2 Products</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section id="products" class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="mb-0">All Products</h3>
+      <div class="d-flex gap-2 align-items-center">
+        <div class="input-group input-group-sm w-auto">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input id="searchInput" type="text" class="form-control form-control-sm" placeholder="Search products">
+        </div>
+        <select id="sortSelect" class="form-select form-select-sm w-auto">
+          <option value="">Sort by</option>
+          <option value="pop">Popularity</option>
+          <option value="price-asc">Price: Low ↑</option>
+          <option value="price-desc">Price: High ↓</option>
+        </select>
+      </div>
+    </div>
+    <div class="row g-4" id="productList">
+      <!-- Products rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT & CTA -->
+<section id="about" class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h4>100% Fresh — Always Fresh</h4>
+        <p>We source products from trusted vendors with guaranteed quality and freshness. Free delivery for orders above ₹999.</p>
+        <ul>
+          <li>Quick, no-cost delivery & setup</li>
+          <li>30-day money-back guarantee</li>
+          <li>24/7 expert help</li>
+        </ul>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=800&q=60" class="img-fluid rounded shadow-sm" alt="about-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>FOODY</h5>
+        <p>Quality produce delivered to your door.</p>
+      </div>
+      <div class="col-md-4">
+        <h6>Links</h6>
+        <ul class="list-unstyled small">
+          <li>Shop</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>Contact</h6>
+        <p class="small mb-0">support@foody.com<br>+91 9876543210</p>
+      </div>
+    </div>
+    <hr style="border-color: rgba(0,0,0,0.06)">
+    <div class="text-center small">© FOODY</div>
+  </div>
+</footer>
+
+<!-- Modals -->
+<!-- Track Order Modal -->
+<div class="modal fade" id="trackModal" tabindex="-1" aria-labelledby="trackModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="trackModalLabel">Track your order</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="orderId" class="form-label">Order ID</label>
+          <input type="text" id="orderId" class="form-control" placeholder="e.g. FOODY-12345">
+        </div>
+        <div id="trackResult" class="small text-muted"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="trackBtn" class="btn btn-primary">Track</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Sign in to FOODY</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input id="emailInput" type="email" class="form-control" placeholder="you@example.com">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input id="passwordInput" type="password" class="form-control" placeholder="••••••">
+        </div>
+        <div id="loginMsg" class="small text-danger"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="doLoginBtn" class="btn btn-success">Sign in</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS + app.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
